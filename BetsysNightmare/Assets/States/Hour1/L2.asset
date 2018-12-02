@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47bb35459df86b54089a3e1a02018b90, type: 3}
+  m_Name: L2
+  m_EditorClassIdentifier: 
+  storyText: 'Shaniqua:
+
+    I didn''t realise she was back from the Himalayas already!'
+  nextStates:
+  - {fileID: 11400000, guid: ff3d9e0692ce0d44fb89ec503f6e26ff, type: 2}
