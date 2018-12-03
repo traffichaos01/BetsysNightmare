@@ -38,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 1093931248842676}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.5, y: 2, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -72,14 +72,14 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.2, y: 0.2}
+    oldSize: {x: 0.72, y: 0.68}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -107,6 +107,9 @@ MonoBehaviour:
   boostTimer: 0
   boostCooldown: 0
   missileTimer: 0
+  hearts: []
+  maxHearts: 3
+  currentHearts: 3
   player: {fileID: 50940690385334444}
   weaponPosition: {x: 0, y: 0, z: 0}
   weapon: {fileID: 1881161989133988, guid: c2d514c0cf1012145b27a056be1197b8, type: 2}
@@ -147,7 +150,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b9b1d15fb2b3f344a953bbf68203f6e2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3f377a786c257864b8a4321429a0aff9, type: 3}
   m_Color: {r: 0.82745105, g: 0.82745105, b: 0.82745105, a: 1}
   m_FlipX: 0
   m_FlipY: 0

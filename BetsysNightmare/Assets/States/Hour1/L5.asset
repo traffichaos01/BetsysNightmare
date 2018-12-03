@@ -11,6 +11,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47bb35459df86b54089a3e1a02018b90, type: 3}
   m_Name: L5
   m_EditorClassIdentifier: 
-  storyText: Raquise Jnr has realised you have no fear and underestimate her power.
-    Therefore, you have been chosen...
-  nextStates: []
+  storyText: 'Shalbameshwa Jones
+
+    Raquise Jnr has realised you have no fear and underestimate her power. Therefore,
+    you have been chosen...
+
+    Daequan:
+
+    Cows ROLLOUT!'
+  nextStates:
+  - {fileID: 11400000, guid: 717002ee7e2fdb248b2179933ba2fca5, type: 2}

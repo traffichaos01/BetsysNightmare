@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class playerController : MonoBehaviour {
 
@@ -13,6 +14,10 @@ public class playerController : MonoBehaviour {
     public float boostTimer = 0;
     public float boostCooldown = 0;
     public float missileTimer = 0;
+
+    public Image[] hearts;
+    public int maxHearts = 3;
+    public int currentHearts = 3;
 
     public Rigidbody2D player;
     private Vector2 movement;
@@ -30,21 +35,48 @@ public class playerController : MonoBehaviour {
         InvokeRepeating("boostAction", 1.0f, 0.25f);
         directPlayer();
         instantiateCleaver();
+        getHearts();
     }
 
     void instantiateCleaver()
     {
         Vector3 weaponPosition = new Vector3(
-            player.transform.position.x + 0.1f,
-            player.transform.position.y + 0.2f,
+            player.transform.position.x + 0.5f,
+            player.transform.position.y + 1.0f,
             player.transform.position.z
             );
-        var newCleaver = Instantiate(weapon, weaponPosition, player.transform.rotation);
+        Instantiate(weapon, weaponPosition, player.transform.rotation);
     }
 
     void Update()
     {
         movementController();
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Milk")
+        {
+            currentHearts--;
+            if (currentHearts == 0)
+            {
+                SceneManager.LoadScene("Dead", LoadSceneMode.Single);
+            }
+            getHearts();
+        }
+    }
+
+    void getHearts()
+    {
+        for (int i = 0; i <= hearts.Length - 1; i++)
+        {
+            hearts[i].gameObject.SetActive(false);
+        }
+
+        for (int i = 0; i <= currentHearts - 1; i++)
+        {
+            hearts[i].gameObject.SetActive(true);
+        }
     }
 
     void movementController()
@@ -103,14 +135,7 @@ public class playerController : MonoBehaviour {
         }
         if (boostTimer > 0)
         {
-            //if (player.velocity.y > 5.0f || player.velocity.y < -5.0f || player.velocity.x > 5.0f || player.velocity < -5.0f)
-            //{
-            //    player.velocity = regularMovement * 2;
-            //}
-            //else
-            //{
-                player.velocity = regularMovement * 3;
-            //}
+            player.velocity = regularMovement * 3;
         }
         else if (boostTimer == 0)
         {
@@ -130,7 +155,7 @@ public class playerController : MonoBehaviour {
         }
         else
         {
-            Cleaver.transform.position = transform.TransformPoint(0.05f, 0.1f, 0);
+            Cleaver.transform.position = transform.TransformPoint(0.3f, 0.2f, 0);
         }
     }
 
@@ -140,6 +165,7 @@ public class playerController : MonoBehaviour {
         Vector3 CleaverPosition = Cleaver.transform.position;
         GameObject newMissile = Instantiate(missile, CleaverPosition, player.transform.rotation);
         newMissile.GetComponent<Rigidbody2D>().velocity = bulletSpeed * Time.deltaTime * trackMouse().normalized;
+        Debug.Log(trackMouse().normalized);
         missileTimer = 1.0f;
         EnergyBar.value -= 2.0f;
     }

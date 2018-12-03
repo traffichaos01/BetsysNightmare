@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CowGame : MonoBehaviour {
 
@@ -27,23 +28,6 @@ public class CowGame : MonoBehaviour {
     {
         var nextStates = state.GetNextStates();
         int countOptions = state.GetNextStates().Length;
-        if (countOptions >= 2)
-        {
-            int newStateNumber;
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                newStateNumber = 1;
-                SetState(nextStates[newStateNumber]);
-            }
-
-            if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                newStateNumber = 2;
-                SetState(nextStates[newStateNumber]);
-            }
-        }
-        else
-        {
             if (Input.anyKeyDown)
             {
                 if (countOptions == 0)
@@ -55,7 +39,6 @@ public class CowGame : MonoBehaviour {
                     SetState(nextStates[0]);
                 }
             }
-        }
     }
 
     void SetState (State newState) {
@@ -65,6 +48,7 @@ public class CowGame : MonoBehaviour {
 
     void HourPlus ()
     {
-
+        SceneManager.LoadScene("CowKiller", LoadSceneMode.Single);
     }
 }
+

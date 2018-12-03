@@ -15,12 +15,6 @@ MonoBehaviour:
 
     Daquan, what should we do?
 
-
-    1. Finish the watermelon you were currenty eating while everyone looks stunned
-    and leaves you behind.
-
-
-    2. Run!'
+'
   nextStates:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 7bc435be46e1f014c8c84ddc44c8fb60, type: 2}
