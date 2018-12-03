@@ -59,7 +59,7 @@ public class playerController : MonoBehaviour {
     {
         if (EnergyBar.value < 10.0f)
         {
-            EnergyBar.value += 0.05f;
+            EnergyBar.value += 0.02f;
         }
     }
 

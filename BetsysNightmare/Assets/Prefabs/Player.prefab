@@ -38,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 1093931248842676}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.5, y: 2, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -111,6 +111,7 @@ MonoBehaviour:
   weaponPosition: {x: 0, y: 0, z: 0}
   weapon: {fileID: 1881161989133988, guid: c2d514c0cf1012145b27a056be1197b8, type: 2}
   missile: {fileID: 1834677620354274, guid: 985a2f9ed8eeeb3459aecac7b887e00d, type: 2}
+  EnergyBar: {fileID: 0}
 --- !u!212 &212431108542471010
 SpriteRenderer:
   m_ObjectHideFlags: 1
