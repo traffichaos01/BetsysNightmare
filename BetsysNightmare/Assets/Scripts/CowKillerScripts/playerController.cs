@@ -64,6 +64,11 @@ public class playerController : MonoBehaviour {
             }
             getHearts();
         }
+
+        if (col.gameObject.tag == "block")
+        {
+            player.velocity = Vector3.zero;
+        }
     }
 
     void getHearts()

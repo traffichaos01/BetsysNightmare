@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Projectile
   - Milk
+  - block
   layers:
   - Default
   - TransparentFX
